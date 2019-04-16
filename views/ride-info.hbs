@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>RightNowTaxi</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/customstyling.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../assets/css/Map-Clean.css">
+    <link rel="stylesheet" href="../assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body class="map">
+    <!-- Start: Navigation Clean -->
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+            <div class="container"><a class="navbar-brand" href="/"><img src="../assets/img/rnt-logo2.png"
+                        width="150px"></a><button class="navbar-toggler" data-toggle="collapse"
+                    data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="/"><i
+                                    class="fas fa-hourglass-half"></i>&nbsp; Cab Request</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="/my-ride"><i
+                                    class="fas fa-car"></i>&nbsp; My Ride</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- End: Navigation Clean -->
+    <section class="bg-dark">
+          <div class="row justify-content-center pt-lg-5">
+            <div class="col-8">
+                <h1 class="display-1 text-center d-lg-flex justify-content-lg-center align-items-lg-start display-1 text-white">Hey, Here's What I Found..</h1>
+                <p class="text-center text-white">Submit your name or cancel if uninterested.</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="row justify-content-center">
+            <div class="col-8 text-white justify-content-center"></div>
+        </div>
+        <div class="row justify-content-center p-lg-5 my-3">
+            <div class="col p-5">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h1 class="display-1 text-center display-1 p-0">Ride Info</h1>
+                        <div class="table-responsive text-center">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>from</th>
+                                        <th>to</th>
+                                        <th>distance</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{from}}</td>
+                                        <td>{{to}}</td>
+                                        <td>{{distance}}km</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div class="col"><br>
+                                <h1 class="text-center">COST: ${{cost}}.00</h1>
+                            </div>
+                        </div>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mt-3 p-5">
+                <div class="card shadow mt-5">
+                    <form class="card-body" method="get" action="/pickup-status">
+                        <h1 class="display-1 text-center display-1 p-0">Passenger</h1><label>First Name</label>
+                        <div class="form-group"><input class="form-control" type="text" placeholder="John"
+                                name="f_name"></div><label>Last Name</label>
+                        <div class="form-group"><input class="form-control" type="text" placeholder="Brown"
+                                name="l_name"></div>
+                                <input class="form-control d-none" type="text" 
+                                name="id" value="{{id}}">
+                        <div class="row">
+                            <div class="col"><button class="btn btn-dark btn-block" type="submit">Confirm Ride</button>
+                            </div>
+                            <div class="col"><button class="btn btn-danger active btn-block"
+                                    type="button">Cancel</button></div>
+                        </div>
+                        <p class="card-text"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/customscript.js"></script>
+</body>
+
+</html>

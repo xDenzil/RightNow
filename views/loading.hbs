@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="refresh" content="4;/ride-info/{{id}}" />
+    <title>RightNowTaxi</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/customstyling.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="assets/css/Map-Clean.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="map">
+    <!-- Start: Navigation Clean -->
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+            <div class="container"><a class="navbar-brand" href="#"><img src="assets/img/rnt-logo2.png"
+                        width="150px"></a><button class="navbar-toggler" data-toggle="collapse"
+                    data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="/"><i
+                                    class="fas fa-hourglass-half"></i>&nbsp; Cab Request</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="/my-ride"><i
+                                    class="fas fa-car"></i>&nbsp; My Ride</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- End: Navigation Clean -->
+    <section>
+        <div class="row justify-content-center pt-lg-4">
+            <div class="col-8 richie-pad blockk">
+                <h1 class="display-4">Richie AI:</h1>
+                <h1 class="display-1 text-truncate" id="anim"></h1>
+                <h1 class="display-1" id="anim2"></h1>
+                <p class="text-center" id="anim">..</p>
+            </div>
+        </div>
+    </section>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/customscript.js"></script>
+
+    <script>
+        var string = "Processing..";
+        var str = string.split("");
+        var el = document.getElementById('anim');
+        (function animate() {
+            str.length > 0 ? el.innerHTML += str.shift() : clearTimeout(running);
+            var running = setTimeout(animate, 90);
+        })();
+    </script>
+
+    <script>
+        var string2 = "One Moment Please.";
+        var str2 = string2.split("");
+        var el2 = document.getElementById('anim2');
+        (function animate() {
+            str2.length > 0 ? el2.innerHTML += str2.shift() : clearTimeout(running);
+            var running = setTimeout(animate, 40);
+        })();
+    </script>
+</body>
+
+</html>
